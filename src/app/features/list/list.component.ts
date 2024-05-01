@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, inject } from '@angular/core';
+import { TasksService } from '../../shared/services/tasks.service';
 
 @Component({
   selector: 'app-list',
@@ -10,9 +11,9 @@ import { Component, inject } from '@angular/core';
 })
 export class ListComponent {
   tasks: any[] = [];
-  httpClient = inject(HttpClient);
+  tasksService = inject(TasksService);
   ngOnInit(){
-    this.httpClient.get<any>('/api/tasks').subscribe((tasks)=>{
+    this.tasksService.getAll().subscribe((tasks)=>{
       this.tasks = tasks;
     });
   }
