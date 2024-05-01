@@ -3,11 +3,13 @@ import { Component, inject } from '@angular/core';
 import { TasksService } from '../../shared/services/tasks.service';
 import { Task } from '../../shared/interfaces/task.interface';
 import { CardComponent } from './components/card/card.component';
+import { RouterLink } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, RouterLink, MatButtonModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
