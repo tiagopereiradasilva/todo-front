@@ -8,7 +8,8 @@ export const routes: Routes = [
         component: ListComponent
     }, 
     {
+        // fazendo (Lazy Loading) carregar componente apenas quando solicitado
         path:'create-task',
-        component: CreateComponent
+        loadComponent: () => import('./features/create/create.component').then(m => m.CreateComponent)
     }
 ];
