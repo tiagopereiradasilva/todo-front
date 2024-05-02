@@ -4,6 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { TasksService } from '../../shared/services/tasks.service';
+import {MatSnackBar} from '@angular/material/snack-bar'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -15,6 +17,8 @@ import { TasksService } from '../../shared/services/tasks.service';
 export class CreateComponent {
 
   taskService = inject(TasksService);
+  snackBar = inject(MatSnackBar);
+  router = inject(Router);
 
   form = new FormGroup({
     title: new FormControl<string>(''),
@@ -23,14 +27,19 @@ export class CreateComponent {
 
 
   onSubmit() {
-
+    
     this.taskService.post({
       title: this.form.controls.title.value != null ? this.form.controls.title.value : "",
       description: this.form.controls.description.value != null ? this.form.controls.description.value : ""
     }).subscribe(() => {
-      alert("Sucesso ao cadastrar Tarefa.");
       this.form.controls.title.setValue("");
       this.form.controls.description.setValue("");
-    });
+      this.snackBar.open("Tarefa criada com sucesso!", "OK", {
+        duration: 3000,
+        horizontalPosition: "end",
+        verticalPosition:"top"
+      });
+      this.router.navigateByUrl("/");
+    })
   }
 }
