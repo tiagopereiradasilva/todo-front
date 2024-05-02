@@ -34,11 +34,7 @@ export class CreateComponent {
     }).subscribe(() => {
       this.form.controls.title.setValue("");
       this.form.controls.description.setValue("");
-      this.snackBar.open("Tarefa criada com sucesso!", "OK", {
-        duration: 3000,
-        horizontalPosition: "end",
-        verticalPosition:"top"
-      });
+      this.snackBar.open("Tarefa criada com sucesso!", "OK");
       this.router.navigateByUrl("/");
     })
   }
