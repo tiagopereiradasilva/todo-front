@@ -3,7 +3,7 @@
 </div>
 <ul>
     @for (task of tasks; track task.id) {
-         <app-card [task]="task" (edit)="onEdit()"></app-card>         
+         <app-card [task]="task" (edit)="onEdit(task)"></app-card>         
     }
 </ul>
 

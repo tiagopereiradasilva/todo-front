@@ -7,13 +7,21 @@ import { TaskPayload } from '../interfaces/payload-task.interface';
   providedIn: 'root'
 })
 export class TasksService {
-  tasks: Task[] = [];
+  
   httpClient = inject(HttpClient);
   getAll(){
     return this.httpClient.get<Task[]>('/api/tasks');
   }
 
+  get(id: string){
+    return this.httpClient.get<Task>(`/api/tasks/${id}`);
+  }
+
   post(payload: TaskPayload){
     return this.httpClient.post('/api/tasks', payload);
+  }
+
+  put(id: string, payload: TaskPayload){
+    return this.httpClient.put(`/api/tasks/${id}`, payload);
   }
 }

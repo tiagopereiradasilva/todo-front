@@ -23,7 +23,7 @@ export class ListComponent {
     });
   }
 
-  onEdit(){
-    this.router.navigateByUrl("/edit-task");
+  onEdit(task: Task){
+    this.router.navigate(['/edit-task', task.id]);
   }
 }

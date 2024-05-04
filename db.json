@@ -1,12 +1,9 @@
 {
   "tasks": [
     {
-      "id": "66326511409dd14e676c9779",
       "title": "Front TO-DO",
       "description": "Implementar Front-End para o projeto (To-DO) Gerenciador Tarefas",
-      "status": "BACKLOG",
-      "createdAt": "2024-05-01T12:51:45.7035195",
-      "updatedAt": "2024-05-01T12:51:45.7035195"
+      "id": "66326511409dd14e676c9779"
     },
     {
       "id": "f450",
