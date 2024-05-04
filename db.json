@@ -1,19 +1,14 @@
 {
   "tasks": [
     {
-      "title": "Front TO-DO",
-      "description": "Implementar Front-End para o projeto (To-DO) Gerenciador Tarefas",
-      "id": "66326511409dd14e676c9779"
+      "title": "Testes",
+      "description": "Descrição de Teste",
+      "id": "f450"
     },
     {
-      "id": "f450",
-      "title": "Teste",
-      "description": "Descrição de Teste"
-    },
-    {
-      "id": "1249",
-      "title": "Nova Tarefa",
-      "description": "Nova Descrição"
+      "title": "New Tarefa",
+      "description": "New Descrição",
+      "id": "1249"
     },
     {
       "id": "7118",
@@ -24,6 +19,16 @@
       "id": "35d0",
       "title": "FAZER ISSO",
       "description": "DESC"
+    },
+    {
+      "id": "6248",
+      "title": "Tarefa",
+      "description": "Descrição da nova tarefa."
+    },
+    {
+      "id": "524c",
+      "title": "NOVA TAREFA",
+      "description": "NOVA DESCRIÇÃO"
     }
   ]
 }
