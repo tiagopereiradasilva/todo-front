@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { TasksService } from '../../shared/services/tasks.service';
 import { Task } from '../../shared/interfaces/task.interface';
 import { CardComponent } from './components/card/card.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 
 @Component({
@@ -16,9 +16,14 @@ import {MatButtonModule} from '@angular/material/button';
 export class ListComponent {
   tasks: Task[] = [];
   tasksService = inject(TasksService);
+  router = inject(Router);
   ngOnInit(){
     this.tasksService.getAll().subscribe((tasks)=>{
       this.tasks = tasks;
     });
+  }
+
+  onEdit(){
+    this.router.navigateByUrl("/edit-task");
   }
 }

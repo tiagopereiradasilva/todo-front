@@ -11,5 +11,9 @@ export const routes: Routes = [
         // fazendo (Lazy Loading) carregar componente apenas quando solicitado
         path:'create-task',
         loadComponent: () => import('./features/create/create.component').then(m => m.CreateComponent)
+    },
+    {
+        path:'edit-task',
+        loadComponent: () => import('./features/edit/edit.component').then(m => m.EditComponent)
     }
 ];
