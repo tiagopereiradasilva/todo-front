@@ -1,15 +1,13 @@
-import { ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { ListComponent } from './features/list/list.component';
-import { inject } from '@angular/core';
-import { TasksService } from './shared/services/tasks.service';
+import { getTasks } from './shared/resolvers/get-tasks.resolver';
+import { getTask } from './shared/resolvers/get-task.resolver';
 
 export const routes: Routes = [
     {
         path: '',
         resolve:{
-            tasks : () => {
-                return inject(TasksService).getAll();
-            }
+            tasks : getTasks
         },
         component: ListComponent
     }, 
@@ -20,9 +18,7 @@ export const routes: Routes = [
     {
         path:'edit-task/:id',
         resolve:{
-            task: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
-                return inject(TasksService).get(route.paramMap.get("id") as string);
-            }
+            task: getTask
         },
         loadComponent: () => import('./features/edit/edit.component').then(m => m.EditComponent)
     }
