@@ -20,7 +20,7 @@ export class CardComponent {
   taskDescription = computed(() => this.task().description);
   taskStatus = computed(() => this.task().status);
   taskCreatedAt = computed(() => this.task().createdAt);
-  taskUodatedAt = computed(() => this.task().updatedAt);
+  taskUpdatedAt = computed(() => this.task().updatedAt);
   
   onClick(){
     this.edit.emit();

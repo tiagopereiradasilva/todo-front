@@ -1,9 +1,10 @@
-<div class="action-container">
-    <a  mat-raised-button [routerLink]="['/create-task']" color="accent">Crair Tarefa</a>
+<div class="action-container">   
+    <a style="background-color: rgb(39, 121, 124); color: white;" mat-raised-button [routerLink]="['/create-task']">Crair Tarefa</a>  
 </div>
 <ul>
     @for (task of tasks; track task.id) {
-         <app-card [task]="task" (edit)="onEdit(task)"></app-card>         
+        <br>
+        <app-card [task]="task" (edit)="onEdit(task)"></app-card>         
     }
 </ul>
 

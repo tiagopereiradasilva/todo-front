@@ -1,13 +1,23 @@
-<mat-card  class="example-card" (click)="onClick()">
-    <mat-card-header>
-      <mat-card-title>{{taskTitle()}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{taskDescription()}}</p>
-      <span>{{taskStatus()}}</span>
-      <p></p>
-    </mat-card-content>
+<mat-card  class="example-card">
+  <div (click)="onClick()">
+      <div class="header-container">
+        <mat-card-header>
+          <mat-card-title>{{taskTitle()}}</mat-card-title>
+        </mat-card-header>        
+      </div>
+      <div class="content-container">
+        <mat-card-content>
+          <p>{{taskDescription()}}</p>
+          <span>{{taskCreatedAt()}}</span>
+          <br>
+          <span>{{taskUpdatedAt()}}</span>
+        </mat-card-content>
+      </div>
+  </div>
+  <div class="actions-container">
     <mat-card-actions>
-      <button mat-button>AVANÇAR</button>
+      <button mat-button style="color: rgb(39, 121, 124);">AVANÇAR</button>
+      <button mat-button style="color: rgb(124, 39, 39);">REMOVER</button>
     </mat-card-actions>
+  </div>  
 </mat-card>

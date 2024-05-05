@@ -1,34 +1,60 @@
 {
   "tasks": [
     {
-      "title": "Testes",
-      "description": "Descrição de Teste",
-      "id": "f450"
+      "id": "662c5bcfa2cb409e67e35ae8",
+      "title": "Estudar AWS",
+      "description": "Fazer cursos e treinamentos focados na estrutura AWS para entender melhor os conceitos",
+      "status": "BACKLOG",
+      "createdAt": "2024-05-04T22:20:57.782",
+      "updatedAt": "2024-05-04T22:20:57.782"
     },
     {
-      "title": "New Tarefa",
-      "description": "New Descrição",
-      "id": "1249"
+      "id": "662c74bd8274de28dcc2371c",
+      "title": "Implementar log na API TO-DO",
+      "description": "Implementar e entender melhos como funcionar os logs na APi TO-DO",
+      "status": "BACKLOG",
+      "createdAt": "2024-04-27T00:45:01.588",
+      "updatedAt": "2024-04-27T15:48:03.006"
     },
     {
-      "id": "7118",
-      "title": "TESTE 3",
-      "description": "DESCRIÇÃO TESTE 3"
+      "id": "662d51dfe1455020b9f21ca0",
+      "title": "Atualização de status das Tasks",
+      "description": "Criar regra para validar a alteração das Tasks",
+      "status": "DONE",
+      "createdAt": "2024-04-27T16:28:31.258",
+      "updatedAt": "2024-04-27T17:26:04.243"
     },
     {
-      "id": "35d0",
-      "title": "FAZER ISSO",
-      "description": "DESC"
+      "id": "662d60f1a6b1090943b6e1f6",
+      "title": "Exceptions na API TO-DO",
+      "description": "Criar regra verificar expections e retornar padronizadas para quem consome a API",
+      "status": "DONE",
+      "createdAt": "2024-04-27T17:32:49.015",
+      "updatedAt": "2024-04-27T18:33:00.486"
     },
     {
-      "id": "6248",
-      "title": "Tarefa",
-      "description": "Descrição da nova tarefa."
+      "id": "662da56ae0b2fa53b31014da",
+      "title": "Segurança na API TO-DO",
+      "description": "Criar regra para garantir segurança na API",
+      "status": "BACKLOG",
+      "createdAt": "2024-04-27T22:24:58.492",
+      "updatedAt": "2024-04-27T22:24:58.492"
     },
     {
-      "id": "524c",
-      "title": "NOVA TAREFA",
-      "description": "NOVA DESCRIÇÃO"
+      "id": "66326511409dd14e676c9779",
+      "title": "Front TO-DO",
+      "description": "Implementar Front-End para o projeto (To-DO) Gerenciador Tarefas",
+      "status": "BACKLOG",
+      "createdAt": "2024-05-01T12:51:45.703",
+      "updatedAt": "2024-05-01T12:51:45.703"
+    },
+    {
+      "id": "6636dc5a365d103c2265978a",
+      "title": "Detele Task",
+      "description": "Deletar uma Task a partir do Front",
+      "status": "BACKLOG",
+      "createdAt": "2024-05-04T22:09:46.102",
+      "updatedAt": "2024-05-04T22:09:46.102"
     }
   ]
 }
