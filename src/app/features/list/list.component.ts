@@ -1,9 +1,9 @@
 
-import { Component, inject } from '@angular/core';
+import { Component, Signal, inject, signal } from '@angular/core';
 import { TasksService } from '../../shared/services/tasks.service';
 import { Task } from '../../shared/interfaces/task.interface';
 import { CardComponent } from './components/card/card.component';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogComponent } from '../../shared/components/dialog/dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -19,16 +19,11 @@ import { filter } from 'rxjs';
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-  tasks: Task[] = [];
+  tasks = signal<Task[]>(inject(ActivatedRoute).snapshot.data["tasks"]);
   tasksService = inject(TasksService);
   snackBar = inject(MatSnackBar);
   router = inject(Router);
   confimationDialog = inject(ConfirmationDialogService);
-  ngOnInit() {
-    this.tasksService.getAll().subscribe((tasks) => {
-      this.tasks = tasks;
-    });
-  }
 
   onEdit(task: Task) {
     this.router.navigate(['/edit-task', task.id]);
@@ -41,7 +36,7 @@ export class ListComponent {
         this.tasksService.delete(task.id).subscribe(() => {
           this.snackBar.open("Tarefa removida com sucesso!", "OK");
           this.tasksService.getAll().subscribe((tasks) => {
-            this.tasks = tasks;
+            this.tasks.set(tasks);
           });
           this.router.navigateByUrl("/");
         })

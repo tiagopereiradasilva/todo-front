@@ -1,16 +1,19 @@
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { ListComponent } from './features/list/list.component';
-import { CreateComponent } from './features/create/create.component';
 import { inject } from '@angular/core';
 import { TasksService } from './shared/services/tasks.service';
 
 export const routes: Routes = [
     {
         path: '',
+        resolve:{
+            tasks : () => {
+                return inject(TasksService).getAll();
+            }
+        },
         component: ListComponent
     }, 
     {
-        // fazendo (Lazy Loading) carregar componente apenas quando solicitado
         path:'create-task',
         loadComponent: () => import('./features/create/create.component').then(m => m.CreateComponent)
     },
