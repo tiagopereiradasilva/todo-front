@@ -15,6 +15,7 @@ export class CardComponent {
   task = input.required<Task>();
 
   @Output() edit = new EventEmitter();
+  @Output() delete = new EventEmitter();
   
   taskTitle = computed(() => this.task().title);
   taskDescription = computed(() => this.task().description);
@@ -24,5 +25,9 @@ export class CardComponent {
   
   onClick(){
     this.edit.emit();
+  }
+
+  onDelete(){
+    this.delete.emit();
   }
 }

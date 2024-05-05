@@ -24,4 +24,8 @@ export class TasksService {
   put(id: string, payload: TaskPayload){
     return this.httpClient.put(`/api/tasks/${id}`, payload);
   }
+
+  delete(id: string){
+    return this.httpClient.delete(`/api/tasks/${id}`);
+  }
 }

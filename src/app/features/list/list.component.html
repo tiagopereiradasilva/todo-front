@@ -4,7 +4,7 @@
 <ul>
     @for (task of tasks; track task.id) {
         <br>
-        <app-card [task]="task" (edit)="onEdit(task)"></app-card>         
+        <app-card [task]="task" (edit)="onEdit(task)" (delete)="onDelete(task)"></app-card>         
     }
 </ul>
 
